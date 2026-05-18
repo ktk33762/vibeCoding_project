@@ -21,7 +21,7 @@ export default function Header({ right }: Props) {
 
   return (
     <header className="app-header">
-      <Link to="/" className="app-logo">MyTodo</Link>
+      <Link to="/" className="app-logo">FitLog</Link>
       <div className="app-header-right">
         {right}
         {!isAuthPage && user && (
