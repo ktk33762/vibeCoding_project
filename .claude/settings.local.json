@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(supabase migration *)",
+      "Bash(supabase db *)",
+      "Bash(node seed.mjs)"
+    ]
+  }
+}

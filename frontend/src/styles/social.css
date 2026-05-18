@@ -1,0 +1,673 @@
+/* ── 레이아웃 ── */
+.social-page {
+  min-height: 100vh;
+  background: #f8f9fc;
+}
+
+.social-content {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.social-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 20px;
+}
+
+.social-empty {
+  text-align: center;
+  color: #9ca3af;
+  padding: 40px 0;
+  font-size: 0.95rem;
+}
+
+.social-error {
+  text-align: center;
+  color: #ef4444;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+/* ── 프로필 카드 ── */
+.profile-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.profile-avatar-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.profile-nickname {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 6px;
+}
+
+.profile-bio {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.profile-bio-empty {
+  font-size: 0.85rem;
+  color: #d1d5db;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ── 통계 ── */
+.profile-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: #f4f5fb;
+  border-radius: 12px;
+  padding: 12px 24px;
+  width: 100%;
+  justify-content: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.stat-item-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 4px 8px;
+  transition: background 0.12s;
+}
+
+.stat-item-btn:hover {
+  background: #e8eaf6;
+}
+
+.stat-num {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 32px;
+  background: #e5e7eb;
+}
+
+/* ── 버튼 ── */
+.btn-social-primary {
+  padding: 9px 28px;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-social-primary:hover:not(:disabled) { background: #4338ca; }
+.btn-social-primary:disabled { opacity: 0.5; cursor: default; }
+
+.btn-social-secondary {
+  padding: 9px 28px;
+  background: #fff;
+  color: #4f46e5;
+  border: 1.5px solid #4f46e5;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-social-secondary:hover { background: #eef2ff; }
+
+/* ── 프로필 편집 폼 ── */
+.profile-edit-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-edit-form input,
+.profile-edit-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.profile-edit-form input:focus,
+.profile-edit-form textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.profile-edit-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.profile-error {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin: 0;
+  text-align: center;
+}
+
+/* ── 프로필 게시글 ── */
+.profile-posts-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.profile-posts-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0 0 14px;
+}
+
+.profile-post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-post-card {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  background: #f9fafb;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.12s;
+  gap: 12px;
+}
+
+.profile-post-card:hover { background: #eef2ff; }
+
+.profile-post-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-post-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile-post-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-post-date {
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+.profile-post-likes {
+  font-size: 0.78rem;
+  color: #f43f5e;
+}
+
+.profile-post-thumb {
+  width: 56px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  background: #e5e7eb;
+}
+
+/* ── 피드 ── */
+.feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.feed-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feed-author-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.feed-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feed-nickname {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.feed-author-row:hover .feed-nickname { text-decoration: underline; }
+
+.feed-post-body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-decoration: none;
+}
+
+.feed-post-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.feed-post-preview {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.feed-post-date {
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+.feed-post-body:hover .feed-post-title { color: #4f46e5; }
+
+.feed-empty-box {
+  text-align: center;
+  padding: 48px 20px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+
+.feed-empty-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 8px;
+}
+
+.feed-empty-desc {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.feed-empty-desc a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.feed-empty-desc a:hover { text-decoration: underline; }
+
+/* ── 운동 현황 ── */
+.profile-workout-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  margin-bottom: 16px;
+}
+
+.workout-stat-row {
+  display: flex;
+  gap: 12px;
+}
+
+.workout-stat-card {
+  flex: 1;
+  background: #f4f5fb;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.workout-stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.workout-stat-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.workout-stat-count {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.workout-stat-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.workout-stat-bar-fill {
+  height: 100%;
+  background: #4f46e5;
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+.workout-stat-pct {
+  font-size: 0.75rem;
+  color: #4f46e5;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* ── 팔로우 목록 모달 ── */
+.follow-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.follow-modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 380px;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+.follow-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.follow-modal-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.follow-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  color: #888;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  line-height: 1;
+}
+
+.follow-modal-close:hover {
+  background: #f3f4f6;
+  color: #333;
+}
+
+.follow-modal-body {
+  overflow-y: auto;
+  flex: 1;
+  padding: 8px 0;
+}
+
+.follow-modal-empty {
+  text-align: center;
+  color: #999;
+  padding: 32px 0;
+  font-size: 0.9rem;
+}
+
+.follow-modal-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  text-decoration: none;
+  transition: background 0.1s;
+}
+
+.follow-modal-item:hover {
+  background: #f9fafb;
+}
+
+.follow-modal-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.follow-modal-nickname {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+/* ── 프로필 루틴 섹션 ── */
+.profile-routines-section {
+  margin-bottom: 20px;
+}
+
+.profile-routine-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-routine-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.profile-routine-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+}
+
+.profile-routine-toggle {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+.profile-routine-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.profile-routine-count {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.profile-routine-arrow {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-left: 2px;
+}
+
+.btn-routine-import {
+  flex-shrink: 0;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1.5px solid #4f46e5;
+  background: #fff;
+  color: #4f46e5;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-routine-import:hover:not(:disabled) {
+  background: #4f46e5;
+  color: #fff;
+}
+
+.btn-routine-import.imported {
+  border-color: #16a34a;
+  color: #16a34a;
+  cursor: default;
+}
+
+.btn-routine-import:disabled:not(.imported) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.profile-routine-items {
+  list-style: none;
+  margin: 0;
+  padding: 0 14px 12px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.profile-routine-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f9fafb;
+}
+
+.profile-routine-item:last-child {
+  border-bottom: none;
+}
+
+.profile-routine-item-name {
+  font-size: 0.88rem;
+  color: #374151;
+}
+
+.profile-routine-item-badges {
+  display: flex;
+  gap: 4px;
+}
+
+.profile-routine-badge {
+  font-size: 0.75rem;
+  padding: 2px 7px;
+  border-radius: 12px;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-weight: 500;
+}

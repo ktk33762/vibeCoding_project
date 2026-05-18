@@ -1,0 +1,503 @@
+/* 게시판 공통 */
+.board-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.board-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+/* 탭 */
+.board-tabs {
+  display: flex;
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 20px;
+}
+
+.board-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 14px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #999;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.15s;
+}
+
+.board-tab:hover {
+  color: #4f46e5;
+}
+
+.board-tab.active {
+  color: #4f46e5;
+}
+
+.board-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #4f46e5;
+}
+
+/* 목록 */
+.board-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.board-title-row h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.board-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: #e5e7eb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.board-list-item {
+  background: #fff;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: background 0.1s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.board-item-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.board-item-thumb {
+  width: 72px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  background: #f3f4f6;
+}
+
+.board-list-item:hover {
+  background: #f9fafb;
+}
+
+.board-item-title {
+  font-size: 0.975rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.board-item-meta {
+  font-size: 0.8rem;
+  color: #999;
+  display: flex;
+  gap: 10px;
+}
+
+.board-author-link {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.board-author-link:hover {
+  text-decoration: underline;
+}
+
+.board-item-likes {
+  color: #f43f5e;
+  font-size: 0.8rem;
+}
+
+.board-empty {
+  text-align: center;
+  color: #999;
+  padding: 60px 0;
+  font-size: 1rem;
+  background: #fff;
+  border-radius: 10px;
+}
+
+/* 글쓰기 / 상세 공통 폼 */
+.board-form-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.board-form-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.board-form-content h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 20px;
+}
+
+.board-form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.board-form input[type="text"],
+.board-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+  resize: vertical;
+}
+
+.board-form input[type="text"]:focus,
+.board-form textarea:focus {
+  border-color: #4f46e5;
+}
+
+.board-form textarea {
+  min-height: 200px;
+}
+
+.board-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.board-error {
+  color: #dc2626;
+  font-size: 0.875rem;
+}
+
+/* 상세 페이지 */
+.post-detail {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  padding: 28px;
+}
+
+.post-detail-header {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.post-detail-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 10px;
+  word-break: break-word;
+}
+
+.post-detail-meta {
+  font-size: 0.825rem;
+  color: #999;
+  display: flex;
+  gap: 12px;
+}
+
+.post-detail-content {
+  font-size: 0.975rem;
+  color: #333;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 120px;
+}
+
+.post-detail-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* 버튼 공통 */
+.btn-back {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  color: #555;
+  transition: background 0.15s;
+}
+
+.btn-back:hover {
+  background: #f3f4f6;
+}
+
+/* 좋아요 */
+.post-like-row {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.btn-like {
+  background: transparent;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #888;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-like:hover:not(:disabled) {
+  border-color: #f43f5e;
+  color: #f43f5e;
+}
+
+.btn-like.liked {
+  border-color: #f43f5e;
+  color: #f43f5e;
+  background: #fff1f2;
+}
+
+.btn-like:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+/* 댓글 */
+.comment-section {
+  margin-top: 24px;
+}
+
+.comment-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 12px;
+}
+
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: #e5e7eb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.comment-empty {
+  background: #fff;
+  text-align: center;
+  color: #999;
+  padding: 28px 0;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.comment-item {
+  background: #fff;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.comment-author {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4f46e5;
+  text-decoration: none;
+}
+
+.comment-author:hover {
+  text-decoration: underline;
+}
+
+.comment-date {
+  font-size: 0.78rem;
+  color: #aaa;
+}
+
+.comment-delete {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  font-size: 0.78rem;
+  color: #dc2626;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.comment-delete:hover {
+  background: #fef2f2;
+}
+
+.comment-content {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.comment-input:focus {
+  border-color: #4f46e5;
+}
+
+.comment-form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-login-hint {
+  font-size: 0.875rem;
+  color: #999;
+  text-align: center;
+  padding: 16px;
+}
+
+.comment-login-hint a {
+  color: #4f46e5;
+  text-decoration: none;
+}
+
+.comment-login-hint a:hover {
+  text-decoration: underline;
+}
+
+/* 이미지 업로드 */
+.board-image-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.board-image-btn {
+  background: #f9fafb;
+  border: 1.5px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 0.875rem;
+  color: #6b7280;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.board-image-btn:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.board-image-preview-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.board-image-preview {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.board-image-remove {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  color: #dc2626;
+  cursor: pointer;
+}
+
+.board-image-remove:hover {
+  background: #fef2f2;
+}
+
+/* 상세 페이지 이미지 */
+.post-detail-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  margin-bottom: 20px;
+}
