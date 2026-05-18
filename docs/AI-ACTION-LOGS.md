@@ -43,3 +43,15 @@
 | 35 | 2026-05-15 | 운동 페이지 기록 상세 표시 기능 구현 | 마이그레이션 20260515120000, 20260515130000, WorkoutPage, useWorkoutLogs | 성공 |
 | 36 | 2026-05-15 | "상세 기록 없음" 버그 수정 | useWorkoutLogs.ts (.eq('user_id') 필터 누락) | 성공 |
 | 37 | 2026-05-15 | 전체 도메인/아키텍처 문서 업데이트 | docs/ 전체 | 성공 |
+| 38 | 2026-05-18 | 오늘의 운동 세션 삭제 기능 추가 | WorkoutPage.tsx, workout.css | 성공 |
+| 39 | 2026-05-18 | 다른 사용자 루틴 조회 및 가져오기 기능 구현 | 마이그레이션 20260518000000, ProfilePage.tsx, useRoutines.ts, social.css | 성공 |
+| 40 | 2026-05-18 | 루틴 가져오기를 위한 RLS 정책 추가 | routine_templates/items SELECT 인증 사용자 허용 | 성공 |
+| 41 | 2026-05-18 | useRoutines.fetchRoutines user_id 필터 추가 | 공개 SELECT 전환 후 타인 루틴 혼입 방지 | 성공 |
+| 42 | 2026-05-18 | 더미 루틴·목표·운동기록 시드 작성 및 실행 | backend/seed-routines.mjs | 성공 |
+| 43 | 2026-05-18 | 루틴 템플릿 편집 기능 구현 | useRoutines.ts (updateRoutineItems), WorkoutPage.tsx (RoutineCard 컴포넌트 추출), workout.css | 성공 |
+| 44 | 2026-05-18 | 운동 통계 섹션 구현 (4종 차트) | useWorkoutStats.ts, WorkoutPage.tsx, recharts 설치, workout.css | 성공 |
+| 45 | 2026-05-18 | 부위별 운동 비율 집계 방식 변경 | 종목 단위 → 루틴(세션) 단위 집계, classifyRoutine 함수 추가 | 성공 |
+| 46 | 2026-05-18 | 루틴 수행률 카드 → 요일 분석 카드로 교체 | useWorkoutStats.ts (buildWeekdayData), WorkoutPage.tsx | 성공 |
+| 47 | 2026-05-18 | README.md 작성 | 프로젝트 설명, 기능, 기술스택, DB스키마 포함 | 성공 |
+| 48 | 2026-05-18 | CONTEXT.md 최신화 | 2026-05-15 이후 변경 사항 전체 반영 | 성공 |
+| 49 | 2026-05-18 | 앱 로고 이름 변경 (MyTodo → FitLog) | Header.tsx, index.html | 성공 |

@@ -16,3 +16,6 @@
 | 8 | 2026-05-15 | workout_log_items 테이블 신설 | 운동 기록에 세부 종목/세트/무게 정보 저장 필요 | WorkoutPage에서 상세 내역 지연 로딩 패턴 도입 |
 | 9 | 2026-05-15 | 댓글 user_id FK → public.profiles(id) 변경 | auth.users 참조 시 PostgREST profiles(nickname) 조인 불가 — 400 오류 발생 | comments 테이블도 FK를 profiles 참조로 교정 (마이그레이션 20260515100000) |
 | 10 | 2026-05-15 | getFollowingIds를 useCallback으로 감싸는 패턴 확립 | 함수 참조가 매 렌더마다 바뀌어 useEffect 무한 루프 발생 | 의존성이 없는 async 함수도 useCallback 적용 필수 |
+| 11 | 2026-05-18 | routine_templates SELECT RLS 공개 전환 | 프로필 페이지에서 타인 루틴 조회 + 가져오기 기능 구현을 위해 인증 사용자 SELECT 허용 | fetchRoutines에 user_id 필터 추가 필수 — 미추가 시 타인 루틴이 내 목록에 섞임 |
+| 12 | 2026-05-18 | 부위별 통계 집계 단위를 종목→루틴(세션)으로 변경 | 종목 단위 집계 시 운동 1회에 4~5개 종목이 각각 1씩 카운트되어 왜곡 발생 | classifyRoutine 함수로 루틴명→부위 분류, 불명확 시 종목 구성 폴백 |
+| 13 | 2026-05-18 | 날짜 파싱 로컬 기준 처리 패턴 확립 | new Date('YYYY-MM-DD')는 UTC 기준 파싱 → 한국(UTC+9)에서 요일 하루 오차 발생 | new Date(y, m-1, d) 로컬 파싱으로 처리 — 요일 분석 등 날짜 계산 시 필수 |
